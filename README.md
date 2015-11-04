@@ -34,6 +34,18 @@ Changer de branch :
 git checkout NomDeLaBranch
 ```
 
+Récupérer les modifications
+-----------
+Récupérer les nouvelles branch :
+```
+git fetch origin
+```
+
+Récupérer les modifications d'une branch (A faire toujours avant de commancer à développer):
+```
+git pull origin NomDeMaBranch
+```
+
 Commit
 -----------
 Voir les fichiers modifiés :
