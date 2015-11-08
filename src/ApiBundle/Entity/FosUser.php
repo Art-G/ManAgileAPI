@@ -1,7 +1,6 @@
 <?php
-// src/UserBundle/Entity/User.php
 
-namespace UserBundle\Entity;
+namespace ApiBundle\Entity;
 
 use FOS\UserBundle\Model\User as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
@@ -16,7 +15,7 @@ use JMS\Serializer\Annotation\VirtualProperty;
  *
  * @ExclusionPolicy("all")
  */
-class User extends BaseUser
+class FosUser extends BaseUser
 {
     /**
      * @ORM\Id
@@ -159,3 +158,4 @@ class User extends BaseUser
         // your own logic
     }
 }
+

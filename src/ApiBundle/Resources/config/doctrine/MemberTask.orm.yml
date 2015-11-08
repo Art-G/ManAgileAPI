@@ -1,0 +1,41 @@
+ApiBundle\Entity\MemberTask:
+    type: entity
+    table: member_task
+    indexes:
+        fk_member_task_task_idx:
+            columns:
+                - task_id
+        fk_member_task_member_idx:
+            columns:
+                - member_id
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    manyToOne:
+        member:
+            targetEntity: Member
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                member_id:
+                    referencedColumnName: id
+            orphanRemoval: false
+        task:
+            targetEntity: Task
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                task_id:
+                    referencedColumnName: id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

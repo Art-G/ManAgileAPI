@@ -1,0 +1,45 @@
+ApiBundle\Entity\List:
+    type: entity
+    table: list
+    indexes:
+        fk_list_board_idx:
+            columns:
+                - board_id
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        name:
+            type: string
+            nullable: false
+            length: 500
+            options:
+                fixed: false
+        position:
+            type: integer
+            nullable: true
+            options:
+                unsigned: false
+        archived:
+            type: boolean
+            nullable: true
+            options:
+                default: '0'
+    manyToOne:
+        board:
+            targetEntity: Board
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                board_id:
+                    referencedColumnName: id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

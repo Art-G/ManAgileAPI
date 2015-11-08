@@ -1,0 +1,55 @@
+ApiBundle\Entity\Task:
+    type: entity
+    table: task
+    indexes:
+        fk_task_list_idx:
+            columns:
+                - list_id
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        name:
+            type: string
+            nullable: false
+            length: 500
+            options:
+                fixed: false
+        description:
+            type: text
+            nullable: true
+            length: null
+            options:
+                fixed: false
+        position:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+        dueDate:
+            type: datetime
+            nullable: true
+            column: due_date
+        archived:
+            type: boolean
+            nullable: true
+            options:
+                default: '0'
+    manyToOne:
+        list:
+            targetEntity: List
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                list_id:
+                    referencedColumnName: id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

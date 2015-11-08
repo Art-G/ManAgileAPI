@@ -1,0 +1,45 @@
+ApiBundle\Entity\Item:
+    type: entity
+    table: item
+    indexes:
+        fk_item_checklist_idx:
+            columns:
+                - checklist_id
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        description:
+            type: text
+            nullable: false
+            length: null
+            options:
+                fixed: false
+        position:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+        checked:
+            type: boolean
+            nullable: true
+            options:
+                default: '0'
+    manyToOne:
+        checklist:
+            targetEntity: Checklist
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                checklist_id:
+                    referencedColumnName: id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }
