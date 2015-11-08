@@ -1,6 +1,6 @@
 <?php
 
-namespace UserBundle\Controller;
+namespace ApiBundle\Controller;
 
 use FOS\RestBundle\Controller\Annotations\View;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -16,7 +16,7 @@ class UserRestController extends Controller
     * @View(serializerGroups={"Default","Details"})
     */
     public function getUserAction($username){
-        $user = $this->getDoctrine()->getRepository('UserBundle:User')->findOneByUsername($username);
+        $user = $this->getDoctrine()->getRepository('ApiBundle:FosUser')->findOneByUsername($username);
         if(!is_object($user)){
             throw $this->createNotFoundException();
         }
