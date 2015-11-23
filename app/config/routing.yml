@@ -10,3 +10,12 @@ rest :
   type : rest
   resource : "routing_rest.yml"
   prefix : /api
+
+api.oauth:
+    resource: "@ApiBundle/Resources/config/routing.yml"
+
+fos_oauth_server_token:
+    resource:     "@FOSOAuthServerBundle/Resources/config/routing/token.xml"
+
+fos_oauth_server_authorize:
+    resource:     "@FOSOAuthServerBundle/Resources/config/routing/authorize.xml"

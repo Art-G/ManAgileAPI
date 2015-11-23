@@ -8,11 +8,6 @@ namespace ApiBundle\Entity;
 class Notification
 {
     /**
-     * @var integer
-     */
-    private $id;
-
-    /**
      * @var \DateTime
      */
     private $createdAt;
@@ -28,20 +23,15 @@ class Notification
     private $readAt;
 
     /**
+     * @var integer
+     */
+    private $id;
+
+    /**
      * @var \ApiBundle\Entity\FosUser
      */
     private $user;
 
-
-    /**
-     * Get id
-     *
-     * @return integer
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
 
     /**
      * Set createdAt
@@ -116,6 +106,16 @@ class Notification
     }
 
     /**
+     * Get id
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
      * Set user
      *
      * @param \ApiBundle\Entity\FosUser $user
@@ -139,4 +139,3 @@ class Notification
         return $this->user;
     }
 }
-

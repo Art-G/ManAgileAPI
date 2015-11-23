@@ -8,11 +8,6 @@ namespace ApiBundle\Entity;
 class Team
 {
     /**
-     * @var integer
-     */
-    private $id;
-
-    /**
      * @var string
      */
     private $name;
@@ -27,16 +22,11 @@ class Team
      */
     private $archived = '0';
 
-
     /**
-     * Get id
-     *
-     * @return integer
+     * @var integer
      */
-    public function getId()
-    {
-        return $this->id;
-    }
+    private $id;
+
 
     /**
      * Set name
@@ -109,5 +99,14 @@ class Team
     {
         return $this->archived;
     }
-}
 
+    /**
+     * Get id
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+}

@@ -8,19 +8,19 @@ namespace ApiBundle\Entity;
 class Member
 {
     /**
-     * @var integer
-     */
-    private $id;
-
-    /**
      * @var boolean
      */
     private $archived = '0';
 
     /**
-     * @var \ApiBundle\Entity\Team
+     * @var integer
      */
-    private $team;
+    private $id;
+
+    /**
+     * @var \ApiBundle\Entity\FosUser
+     */
+    private $user;
 
     /**
      * @var \ApiBundle\Entity\TeamRole
@@ -28,20 +28,10 @@ class Member
     private $role;
 
     /**
-     * @var \ApiBundle\Entity\FosUser
+     * @var \ApiBundle\Entity\Team
      */
-    private $user;
+    private $team;
 
-
-    /**
-     * Get id
-     *
-     * @return integer
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
 
     /**
      * Set archived
@@ -68,27 +58,37 @@ class Member
     }
 
     /**
-     * Set team
+     * Get id
      *
-     * @param \ApiBundle\Entity\Team $team
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set user
+     *
+     * @param \ApiBundle\Entity\FosUser $user
      *
      * @return Member
      */
-    public function setTeam(\ApiBundle\Entity\Team $team = null)
+    public function setUser(\ApiBundle\Entity\FosUser $user = null)
     {
-        $this->team = $team;
+        $this->user = $user;
 
         return $this;
     }
 
     /**
-     * Get team
+     * Get user
      *
-     * @return \ApiBundle\Entity\Team
+     * @return \ApiBundle\Entity\FosUser
      */
-    public function getTeam()
+    public function getUser()
     {
-        return $this->team;
+        return $this->user;
     }
 
     /**
@@ -116,27 +116,26 @@ class Member
     }
 
     /**
-     * Set user
+     * Set team
      *
-     * @param \ApiBundle\Entity\FosUser $user
+     * @param \ApiBundle\Entity\Team $team
      *
      * @return Member
      */
-    public function setUser(\ApiBundle\Entity\FosUser $user = null)
+    public function setTeam(\ApiBundle\Entity\Team $team = null)
     {
-        $this->user = $user;
+        $this->team = $team;
 
         return $this;
     }
 
     /**
-     * Get user
+     * Get team
      *
-     * @return \ApiBundle\Entity\FosUser
+     * @return \ApiBundle\Entity\Team
      */
-    public function getUser()
+    public function getTeam()
     {
-        return $this->user;
+        return $this->team;
     }
 }
-

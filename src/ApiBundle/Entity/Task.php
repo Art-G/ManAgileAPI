@@ -8,11 +8,6 @@ namespace ApiBundle\Entity;
 class Task
 {
     /**
-     * @var integer
-     */
-    private $id;
-
-    /**
      * @var string
      */
     private $name;
@@ -38,20 +33,15 @@ class Task
     private $archived = '0';
 
     /**
-     * @var \ApiBundle\Entity\List
+     * @var integer
+     */
+    private $id;
+
+    /**
+     * @var \ApiBundle\Entity\Tasklist
      */
     private $list;
 
-
-    /**
-     * Get id
-     *
-     * @return integer
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
 
     /**
      * Set name
@@ -174,13 +164,23 @@ class Task
     }
 
     /**
+     * Get id
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
      * Set list
      *
-     * @param \ApiBundle\Entity\List $list
+     * @param \ApiBundle\Entity\Tasklist $list
      *
      * @return Task
      */
-    public function setList(\ApiBundle\Entity\List $list = null)
+    public function setList(\ApiBundle\Entity\Tasklist $list = null)
     {
         $this->list = $list;
 
@@ -190,11 +190,10 @@ class Task
     /**
      * Get list
      *
-     * @return \ApiBundle\Entity\List
+     * @return \ApiBundle\Entity\Tasklist
      */
     public function getList()
     {
         return $this->list;
     }
 }
-
