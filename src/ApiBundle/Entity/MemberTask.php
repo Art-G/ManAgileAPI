@@ -13,14 +13,14 @@ class MemberTask
     private $id;
 
     /**
-     * @var \ApiBundle\Entity\Member
-     */
-    private $member;
-
-    /**
      * @var \ApiBundle\Entity\Task
      */
     private $task;
+
+    /**
+     * @var \ApiBundle\Entity\Member
+     */
+    private $member;
 
 
     /**
@@ -31,30 +31,6 @@ class MemberTask
     public function getId()
     {
         return $this->id;
-    }
-
-    /**
-     * Set member
-     *
-     * @param \ApiBundle\Entity\Member $member
-     *
-     * @return MemberTask
-     */
-    public function setMember(\ApiBundle\Entity\Member $member = null)
-    {
-        $this->member = $member;
-
-        return $this;
-    }
-
-    /**
-     * Get member
-     *
-     * @return \ApiBundle\Entity\Member
-     */
-    public function getMember()
-    {
-        return $this->member;
     }
 
     /**
@@ -80,5 +56,28 @@ class MemberTask
     {
         return $this->task;
     }
-}
 
+    /**
+     * Set member
+     *
+     * @param \ApiBundle\Entity\Member $member
+     *
+     * @return MemberTask
+     */
+    public function setMember(\ApiBundle\Entity\Member $member = null)
+    {
+        $this->member = $member;
+
+        return $this;
+    }
+
+    /**
+     * Get member
+     *
+     * @return \ApiBundle\Entity\Member
+     */
+    public function getMember()
+    {
+        return $this->member;
+    }
+}

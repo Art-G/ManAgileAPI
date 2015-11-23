@@ -3,15 +3,10 @@
 namespace ApiBundle\Entity;
 
 /**
- * List
+ * Tasklist
  */
-class List
+class Tasklist
 {
-    /**
-     * @var integer
-     */
-    private $id;
-
     /**
      * @var string
      */
@@ -28,27 +23,22 @@ class List
     private $archived = '0';
 
     /**
+     * @var integer
+     */
+    private $id;
+
+    /**
      * @var \ApiBundle\Entity\Board
      */
     private $board;
 
 
     /**
-     * Get id
-     *
-     * @return integer
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
-
-    /**
      * Set name
      *
      * @param string $name
      *
-     * @return List
+     * @return Tasklist
      */
     public function setName($name)
     {
@@ -72,7 +62,7 @@ class List
      *
      * @param integer $position
      *
-     * @return List
+     * @return Tasklist
      */
     public function setPosition($position)
     {
@@ -96,7 +86,7 @@ class List
      *
      * @param boolean $archived
      *
-     * @return List
+     * @return Tasklist
      */
     public function setArchived($archived)
     {
@@ -116,11 +106,21 @@ class List
     }
 
     /**
+     * Get id
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
      * Set board
      *
      * @param \ApiBundle\Entity\Board $board
      *
-     * @return List
+     * @return Tasklist
      */
     public function setBoard(\ApiBundle\Entity\Board $board = null)
     {
@@ -139,4 +139,3 @@ class List
         return $this->board;
     }
 }
-

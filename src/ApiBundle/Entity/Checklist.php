@@ -8,11 +8,6 @@ namespace ApiBundle\Entity;
 class Checklist
 {
     /**
-     * @var integer
-     */
-    private $id;
-
-    /**
      * @var string
      */
     private $tittle;
@@ -23,20 +18,15 @@ class Checklist
     private $creationDate;
 
     /**
+     * @var integer
+     */
+    private $id;
+
+    /**
      * @var \ApiBundle\Entity\Task
      */
     private $task;
 
-
-    /**
-     * Get id
-     *
-     * @return integer
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
 
     /**
      * Set tittle
@@ -87,6 +77,16 @@ class Checklist
     }
 
     /**
+     * Get id
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
      * Set task
      *
      * @param \ApiBundle\Entity\Task $task
@@ -110,4 +110,3 @@ class Checklist
         return $this->task;
     }
 }
-

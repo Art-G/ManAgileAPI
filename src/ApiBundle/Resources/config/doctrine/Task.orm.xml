@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="ApiBundle\Entity\Task" table="task">
+    <indexes>
+      <index name="fk_task_list_idx" columns="list_id"/>
+    </indexes>
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="name" type="string" column="name" length="500" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="description" type="text" column="description" nullable="true">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="position" type="integer" column="position" nullable="false">
+      <options>
+        <option name="unsigned"/>
+      </options>
+    </field>
+    <field name="dueDate" type="datetime" column="due_date" nullable="true"/>
+    <field name="archived" type="boolean" column="archived" nullable="true">
+      <options>
+        <option name="default">0</option>
+      </options>
+    </field>
+    <many-to-one field="list" target-entity="Tasklist" fetch="LAZY">
+      <join-columns>
+        <join-column name="list_id" referenced-column-name="id"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>

@@ -8,11 +8,6 @@ namespace ApiBundle\Entity;
 class Label
 {
     /**
-     * @var integer
-     */
-    private $id;
-
-    /**
      * @var string
      */
     private $name;
@@ -23,20 +18,15 @@ class Label
     private $color;
 
     /**
+     * @var integer
+     */
+    private $id;
+
+    /**
      * @var \ApiBundle\Entity\Team
      */
     private $team;
 
-
-    /**
-     * Get id
-     *
-     * @return integer
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
 
     /**
      * Set name
@@ -87,6 +77,16 @@ class Label
     }
 
     /**
+     * Get id
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
      * Set team
      *
      * @param \ApiBundle\Entity\Team $team
@@ -110,4 +110,3 @@ class Label
         return $this->team;
     }
 }
-

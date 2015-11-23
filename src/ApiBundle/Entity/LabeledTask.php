@@ -13,14 +13,14 @@ class LabeledTask
     private $id;
 
     /**
-     * @var \ApiBundle\Entity\Label
-     */
-    private $label;
-
-    /**
      * @var \ApiBundle\Entity\Task
      */
     private $task;
+
+    /**
+     * @var \ApiBundle\Entity\Label
+     */
+    private $label;
 
 
     /**
@@ -31,30 +31,6 @@ class LabeledTask
     public function getId()
     {
         return $this->id;
-    }
-
-    /**
-     * Set label
-     *
-     * @param \ApiBundle\Entity\Label $label
-     *
-     * @return LabeledTask
-     */
-    public function setLabel(\ApiBundle\Entity\Label $label = null)
-    {
-        $this->label = $label;
-
-        return $this;
-    }
-
-    /**
-     * Get label
-     *
-     * @return \ApiBundle\Entity\Label
-     */
-    public function getLabel()
-    {
-        return $this->label;
     }
 
     /**
@@ -80,5 +56,28 @@ class LabeledTask
     {
         return $this->task;
     }
-}
 
+    /**
+     * Set label
+     *
+     * @param \ApiBundle\Entity\Label $label
+     *
+     * @return LabeledTask
+     */
+    public function setLabel(\ApiBundle\Entity\Label $label = null)
+    {
+        $this->label = $label;
+
+        return $this;
+    }
+
+    /**
+     * Get label
+     *
+     * @return \ApiBundle\Entity\Label
+     */
+    public function getLabel()
+    {
+        return $this->label;
+    }
+}

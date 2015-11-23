@@ -8,11 +8,6 @@ namespace ApiBundle\Entity;
 class TeamRole
 {
     /**
-     * @var integer
-     */
-    private $id;
-
-    /**
      * @var string
      */
     private $name;
@@ -22,16 +17,11 @@ class TeamRole
      */
     private $description;
 
-
     /**
-     * Get id
-     *
-     * @return integer
+     * @var integer
      */
-    public function getId()
-    {
-        return $this->id;
-    }
+    private $id;
+
 
     /**
      * Set name
@@ -80,5 +70,14 @@ class TeamRole
     {
         return $this->description;
     }
-}
 
+    /**
+     * Get id
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+}

@@ -8,11 +8,6 @@ namespace ApiBundle\Entity;
 class Board
 {
     /**
-     * @var integer
-     */
-    private $id;
-
-    /**
      * @var string
      */
     private $name;
@@ -33,20 +28,15 @@ class Board
     private $archived = '0';
 
     /**
+     * @var integer
+     */
+    private $id;
+
+    /**
      * @var \ApiBundle\Entity\Team
      */
     private $team;
 
-
-    /**
-     * Get id
-     *
-     * @return integer
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
 
     /**
      * Set name
@@ -145,6 +135,16 @@ class Board
     }
 
     /**
+     * Get id
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
      * Set team
      *
      * @param \ApiBundle\Entity\Team $team
@@ -168,4 +168,3 @@ class Board
         return $this->team;
     }
 }
-

@@ -31,12 +31,12 @@ framework:
     fragments:       ~
     http_method_override: true
 
-# Twig Configuration
+# Twig
 twig:
     debug:            "%kernel.debug%"
     strict_variables: "%kernel.debug%"
 
-# Assetic Configuration
+# Assetic
 assetic:
     debug:          "%kernel.debug%"
     use_controller: false
@@ -49,7 +49,7 @@ assetic:
         #yui_css:
         #    jar: "%kernel.root_dir%/Resources/java/yuicompressor-2.4.7.jar"
 
-# Doctrine Configuration
+# Doctrine
 doctrine:
     dbal:
         driver:   pdo_mysql
@@ -71,7 +71,7 @@ doctrine:
         naming_strategy: doctrine.orm.naming_strategy.underscore
         auto_mapping: true
 
-# Swiftmailer Configuration
+# Swiftmailer
 swiftmailer:
     transport: "%mailer_transport%"
     host:      "%mailer_host%"
@@ -79,13 +79,13 @@ swiftmailer:
     password:  "%mailer_password%"
     spool:     { type: memory }
 
-# FOSUserBundle Configuration
+# FOSUserBundle
 fos_user:
     db_driver: orm
     firewall_name: main
     user_class: ApiBundle\Entity\FosUser
 
-# FOSRestBundle Configuration
+# FOSRestBundle
 fos_rest:
     param_fetcher_listener: true
     body_listener: true
@@ -103,3 +103,13 @@ fos_rest:
         default_engine: twig
     routing_loader:
         default_format: json
+
+# FOSOauthBundle
+fos_oauth_server:
+    db_driver: orm    # Driver availables: orm, mongodb, or propel
+    client_class:        ApiBundle\Entity\Client
+    access_token_class:  ApiBundle\Entity\AccessToken
+    refresh_token_class: ApiBundle\Entity\RefreshToken
+    auth_code_class:     ApiBundle\Entity\AuthCode
+    service:
+        user_provider: fos_user.user_manager

@@ -8,11 +8,6 @@ namespace ApiBundle\Entity;
 class Item
 {
     /**
-     * @var integer
-     */
-    private $id;
-
-    /**
      * @var string
      */
     private $description;
@@ -28,20 +23,15 @@ class Item
     private $checked = '0';
 
     /**
+     * @var integer
+     */
+    private $id;
+
+    /**
      * @var \ApiBundle\Entity\Checklist
      */
     private $checklist;
 
-
-    /**
-     * Get id
-     *
-     * @return integer
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
 
     /**
      * Set description
@@ -116,6 +106,16 @@ class Item
     }
 
     /**
+     * Get id
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
      * Set checklist
      *
      * @param \ApiBundle\Entity\Checklist $checklist
@@ -139,4 +139,3 @@ class Item
         return $this->checklist;
     }
 }
-

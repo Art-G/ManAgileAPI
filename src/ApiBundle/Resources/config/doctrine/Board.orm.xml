@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="ApiBundle\Entity\Board" table="board">
+    <indexes>
+      <index name="fk_board_team_idx" columns="team_id"/>
+    </indexes>
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="name" type="string" column="name" length="500" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="description" type="text" column="description" nullable="true">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="favorite" type="boolean" column="favorite" nullable="true">
+      <options>
+        <option name="default">0</option>
+      </options>
+    </field>
+    <field name="archived" type="boolean" column="archived" nullable="true">
+      <options>
+        <option name="default">0</option>
+      </options>
+    </field>
+    <many-to-one field="team" target-entity="Team" fetch="LAZY">
+      <join-columns>
+        <join-column name="team_id" referenced-column-name="id"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>

@@ -22,7 +22,8 @@
         "friendsofsymfony/user-bundle": "~2.0@dev",
         "friendsofsymfony/rest-bundle": "^1.7",
         "jms/serializer-bundle": "^1.0",
-        "twig/twig": "~1.0"
+        "twig/twig": "~1.0",
+        "friendsofsymfony/oauth-server-bundle": "dev-master"
     },
     "require-dev": {
         "sensio/generator-bundle": "~2.3"

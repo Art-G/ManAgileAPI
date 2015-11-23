@@ -42,4 +42,14 @@ class UserRestController extends Controller
             throw new AccessDeniedException($message);
         }
     }
+
+    public function getSecureResourceAction()
+    {
+        # this is it
+        if (false === $this->get('security.context')->isGranted('IS_AUTHENTICATED_FULLY')) {
+            throw new AccessDeniedException();
+        }
+
+        // [...]
+    }
 }

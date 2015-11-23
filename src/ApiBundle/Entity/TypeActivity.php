@@ -8,11 +8,6 @@ namespace ApiBundle\Entity;
 class TypeActivity
 {
     /**
-     * @var integer
-     */
-    private $id;
-
-    /**
      * @var string
      */
     private $type;
@@ -22,16 +17,11 @@ class TypeActivity
      */
     private $patternMessage;
 
-
     /**
-     * Get id
-     *
-     * @return integer
+     * @var integer
      */
-    public function getId()
-    {
-        return $this->id;
-    }
+    private $id;
+
 
     /**
      * Set type
@@ -80,5 +70,14 @@ class TypeActivity
     {
         return $this->patternMessage;
     }
-}
 
+    /**
+     * Get id
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+}
