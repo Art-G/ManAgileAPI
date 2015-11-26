@@ -8,6 +8,7 @@
 namespace Managile\ApiBundle\Entity;
 
 use Doctrine\ORM\EntityRepository;
+use Doctrine\ORM\QueryBuilder;
 
 class BoardRepository extends EntityRepository
 {
@@ -15,20 +16,15 @@ class BoardRepository extends EntityRepository
      * @param $team_id
      * @return mixed
      */
-    public function findBoardByTeam($team_id)
+    public function showBoardByTeam($team_id)
     {
-        $query = createQueryBuilder('b');
+        $qb = $this->createQueryBuilder('a');
 
-        return $query->join('b.team t')
-            ->where($query->expr()->eq('t.id', ':team_id'))
-            ->setParameter('team_id', $team_id)
-            ->getQuery();
+        $qb->select('a.id, a.name ,a.description')
+            ->where('a.team = :team_id')
+            ->setParameter('team_id', $team_id);
 
-            /*$this->getEntityManager()
-            ->createQuery(
-                'SELECT b FROM ManagileApiBundle:board b  WHERE b.team LIKE 1'
-            )
-            ->setParameter("team_id", $team_id)
-            ->getResult();*/
+        return $qb->getQuery()
+            ->getResult();
     }
 }

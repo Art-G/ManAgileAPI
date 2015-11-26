@@ -16,14 +16,31 @@ class BoardRestController extends Controller
 {
     /**
      *
-     * @param type $team_id
-     *
      * @View(serializerGroups={"Default","Details"})
+     * @param $id
      * @return object
      */
-    public function getBoardAction($team_id){
-        $boards = $this->getDoctrine()->getRepository('ManagileApiBundle:Board')->findBoardByTeam($team_id);
+    public function getBoardAction($id){
+        $repository = $this->getDoctrine()->getRepository('ManagileApiBundle:Board');
+        $boards = $repository->find($id);
         if(!is_object($boards)){
+            throw $this->createNotFoundException();
+        }
+        return $boards;
+    }
+
+    /**
+     *
+     * @View(serializerGroups={"Default","Details"})
+     * @param $team_id
+     * @return object
+     */
+    public function getBoardByTeamAction($team_id){
+        $repository = $this->getDoctrine()->getRepository('ManagileApiBundle:Board');
+
+        $boards = $repository->showBoardByTeam($team_id);
+
+        if(!is_array($boards)){
             throw $this->createNotFoundException();
         }
         return $boards;

@@ -2,9 +2,13 @@
 
 namespace Managile\ApiBundle\Entity;
 
+
+use Doctrine\ORM\Mapping as ORM;
+
 /**
- * @ORM\Table(name="Board")
- * @ORM\Entity(repositoryClass="Managile\ApiBundle\Entity\BoardRepository")
+ * Board
+ * @ORM/Table()
+ * #ORM/Entity(repositoryClass="Managile\ApiBundle\Entity\BoardRepository")
  */
 class Board
 {
@@ -148,11 +152,11 @@ class Board
     /**
      * Set team
      *
-     * @param \ApiBundle\Entity\Team $team
+     * @param Managile\ApiBundle\Entity\Team $team
      *
      * @return Board
      */
-    public function setTeam(\ApiBundle\Entity\Team $team = null)
+    public function setTeam(Managile\ApiBundle\Entity\Team $team = null)
     {
         $this->team = $team;
 
