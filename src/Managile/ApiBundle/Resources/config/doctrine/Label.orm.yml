@@ -1,0 +1,41 @@
+Managile\ApiBundle\Entity\Label:
+    type: entity
+    table: label
+    indexes:
+        fk_label_team_idx:
+            columns:
+                - team_id
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        name:
+            type: string
+            nullable: false
+            length: 500
+            options:
+                fixed: false
+        color:
+            type: string
+            nullable: true
+            length: 20
+            options:
+                fixed: false
+    manyToOne:
+        team:
+            targetEntity: Team
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                team_id:
+                    referencedColumnName: id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

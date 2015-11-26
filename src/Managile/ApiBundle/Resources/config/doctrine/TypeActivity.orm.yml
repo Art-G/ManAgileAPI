@@ -1,0 +1,27 @@
+Managile\ApiBundle\Entity\TypeActivity:
+    type: entity
+    table: type_activity
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        type:
+            type: string
+            nullable: false
+            length: 100
+            options:
+                fixed: false
+        patternMessage:
+            type: text
+            nullable: true
+            length: null
+            options:
+                fixed: false
+            column: pattern_message
+    lifecycleCallbacks: {  }

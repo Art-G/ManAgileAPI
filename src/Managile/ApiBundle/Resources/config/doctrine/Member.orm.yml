@@ -1,0 +1,60 @@
+Managile\ApiBundle\Entity\Member:
+    type: entity
+    table: member
+    indexes:
+        fk_member_team_idx:
+            columns:
+                - team_id
+        fk_member_user_idx:
+            columns:
+                - user_id
+        fk_member_team_role_idx:
+            columns:
+                - role_id
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        archived:
+            type: boolean
+            nullable: true
+            options:
+                default: '0'
+    manyToOne:
+        team:
+            targetEntity: Team
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                team_id:
+                    referencedColumnName: id
+            orphanRemoval: false
+        role:
+            targetEntity: TeamRole
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                role_id:
+                    referencedColumnName: id
+            orphanRemoval: false
+        user:
+            targetEntity: FosUser
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                user_id:
+                    referencedColumnName: id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

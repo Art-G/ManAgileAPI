@@ -1,0 +1,6 @@
+services:
+#    managile.oauth.facebook_extension:
+#        class: Managile\OAuthBundle\GrantExtension\FacebookGrantExtension
+#        arguments: [@doctrine.orm.entity_manager, %managile_o_auth.grants.facebook%]
+#        tags:
+#            - { name: fos_oauth_server.grant_extension, uri: 'http://managile/grants/facebook' }

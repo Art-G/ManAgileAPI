@@ -1,0 +1,19 @@
+users : 
+  type: rest
+  resource: "ManagileApiBundle:UserRest"
+  name_prefix: api_
+
+team :
+  type: rest
+  resource: "ManagileApiBundle:TeamRest"
+  name_prefix: api_
+
+member :
+  type: rest
+  resource: "ManagileApiBundle:MemberRest"
+  name_prefix: api_
+
+board :
+  type: rest
+  resource: "ManagileApiBundle:BoardRest"
+  name_prefix: api_
