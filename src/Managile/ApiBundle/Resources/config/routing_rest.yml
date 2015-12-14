@@ -17,3 +17,13 @@ board :
   type: rest
   resource: "ManagileApiBundle:BoardRest"
   name_prefix: api_
+
+taskList :
+  type: rest
+  resource: "ManagileApiBundle:TaskListRest"
+  name_prefix: api_
+
+task :
+  type: rest
+  resource: "ManagileApiBundle:TaskRest"
+  name_prefix: api_

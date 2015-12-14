@@ -1,6 +1,7 @@
 Managile\ApiBundle\Entity\TaskList:
     type: entity
     table: tasklist
+    repositoryClass: Managile\ApiBundle\Entity\TaskListRepository
     indexes:
         fk_list_board_idx:
             columns:

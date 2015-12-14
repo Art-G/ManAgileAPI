@@ -3,7 +3,9 @@
 namespace Managile\ApiBundle\Entity;
 
 /**
- * List
+ * TaskList
+ * @ORM\Table()
+ * @ORM\Entity(repositoryClass="Managile\ApiBundle\Entity\TaskListRepository")
  */
 class TaskList
 {

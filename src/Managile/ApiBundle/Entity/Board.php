@@ -7,8 +7,8 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * Board
- * @ORM/Table()
- * #ORM/Entity(repositoryClass="Managile\ApiBundle\Entity\BoardRepository")
+ * @ORM\Table()
+ * @ORM\Entity(repositoryClass="Managile\ApiBundle\Entity\BoardRepository")
  */
 class Board
 {
