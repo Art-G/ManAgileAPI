@@ -1,6 +1,7 @@
 Managile\ApiBundle\Entity\Member:
     type: entity
     table: member
+    repositoryClass: Managile\ApiBundle\Entity\MemberRepository
     indexes:
         fk_member_team_idx:
             columns:

@@ -1,7 +1,7 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: Arthur
+ * User: Amaury
  * Date: 25/11/2015
  * Time: 15:22
  */
@@ -27,5 +27,23 @@ class MemberRestController extends Controller
             throw $this->createNotFoundException();
         }
         return $member;
+    }
+	
+	
+	/**
+     *
+     * @View(serializerGroups={"Default","Details"})
+     * @param $team_id
+     * @return object
+     */
+    public function getMemberByTeamAction($team_id){
+        $repository = $this->getDoctrine()->getRepository('ManagileApiBundle:Member');
+
+        $members = $repository->showMemberByTeam($team_id);
+
+        if(!is_array($members)){
+            throw $this->createNotFoundException();
+        }
+        return $members;
     }
 }

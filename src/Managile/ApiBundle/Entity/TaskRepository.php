@@ -1,7 +1,7 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: Arthur
+ * User: Amaury
  * Date: 13/12/2015
  * Time: 17:35
  */
@@ -24,6 +24,38 @@ class TaskRepository extends EntityRepository
         $qb->select('a.id, a.name , a.position, a.description, IDENTITY(a.list)')
             ->where('a.list = :list_id')
             ->setParameter('list_id', $list_id);
+
+        return $qb->getQuery()
+            ->getResult();
+    }
+	
+	/**
+     * @return mixed
+     */
+	public function showTaskToday()
+    {
+        $qb = $this->createQueryBuilder('a');
+
+        $qb->select('a.id, a.name, a.dueDate')
+			->where('a.dueDate >= :dueDate', 'a.dueDate < :dueDate2')
+            ->setParameter('dueDate',new \DateTime())
+			->setParameter('dueDate2',new \DateTime('tomorrow'));
+
+        return $qb->getQuery()
+            ->getResult();
+    }
+	
+	/**
+     * @return mixed
+     */
+	public function showTaskTomorrow()
+    {
+        $qb = $this->createQueryBuilder('a');
+
+        $qb->select('a.id, a.name, a.dueDate')
+			->where('a.dueDate >= :dueDate', 'a.dueDate < :dueDate2')
+            ->setParameter('dueDate',new \DateTime('tomorrow'))
+			->setParameter('dueDate2',new \DateTime('tomorrow + 1day'));
 
         return $qb->getQuery()
             ->getResult();

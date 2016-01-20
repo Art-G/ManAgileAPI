@@ -28,4 +28,5 @@ class TaskListRepository extends EntityRepository
         return $qb->getQuery()
             ->getResult();
     }
+	
 }
