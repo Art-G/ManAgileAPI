@@ -60,4 +60,22 @@ class TaskRepository extends EntityRepository
         return $qb->getQuery()
             ->getResult();
     }
+	
+	/**
+     * @param $task_id
+     * @return mixed
+     */
+    public function deleteTask($task_id)
+    {
+        $qb = $this->createQueryBuilder('a');
+
+        $qb->delete()
+            ->where('a.id = :task_id')
+            ->setParameter('task_id', $task_id);
+
+        return $qb->getQuery()
+            ->getResult();
+    }
+	
+
 }

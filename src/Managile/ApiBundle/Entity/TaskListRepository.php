@@ -29,4 +29,20 @@ class TaskListRepository extends EntityRepository
             ->getResult();
     }
 	
+	/**
+     * @param $list_id
+     * @return mixed
+     */
+    public function deleteList($list_id)
+    {
+        $qb = $this->createQueryBuilder('a');
+
+        $qb->delete()
+            ->where('a.id = :list_id')
+            ->setParameter('list_id', $list_id);
+
+        return $qb->getQuery()
+            ->getResult();
+    }
+	
 }

@@ -80,5 +80,22 @@ class TaskRestController extends FOSRestController
         }
         return $tasks;
     }
+	
+	/**
+     *
+     * @View(serializerGroups={"Default","Details"})
+     * @param $task_id
+     * @return object
+     */
+    public function deleteTaskAction($task_id){
+        $repository = $this->getDoctrine()->getRepository('ManagileApiBundle:Task');
+
+        $retour = $repository->deleteTask($task_id);
+
+        if(!($retour)){
+            throw $this->createNotFoundException();
+        }
+        return $retour;
+    }
 
 }
