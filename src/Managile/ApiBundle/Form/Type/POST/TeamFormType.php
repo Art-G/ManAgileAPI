@@ -2,8 +2,8 @@
 /**
  * Created by PhpStorm.
  * User: Arthur
- * Date: 05/12/2015
- * Time: 23:26
+ * Date: 20/01/2016
+ * Time: 14:36
  */
 
 namespace Managile\ApiBundle\Form\Type\POST;
@@ -14,26 +14,17 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\HttpFoundation\Request;
 
-class BoardFormType extends AbstractType
+class TeamFormType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options) {
         $builder->add('name')
-            ->add('description')
-            ->add('favorite', 'checkbox', array(
-                'label'     => 'favorite board',
-                'required'  => false,
-            ))
-            ->add('archived', 'checkbox', array(
-                'label'     => 'archiver le board',
-                'required'  => false,
-            ))
-            ->add('team', 'entity', array('class' => 'ManagileApiBundle:Team'));
+            ->add('description');
     }
 
     public function configureOptions(OptionsResolver $resolver) {
         $resolver->setDefaults(array(
             'csrf_protection' => false,
-            'data_class' => 'Managile\ApiBundle\Entity\Board'
+            'data_class' => 'ManAgile\ApiBundle\Entity\Board'
         ));
     }
 

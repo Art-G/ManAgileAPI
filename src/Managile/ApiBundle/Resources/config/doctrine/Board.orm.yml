@@ -32,12 +32,12 @@ Managile\ApiBundle\Entity\Board:
             type: boolean
             nullable: true
             options:
-                default: '0'
+                default: false
         archived:
             type: boolean
             nullable: true
             options:
-                default: '0'
+                default: false
     manyToOne:
         team:
             targetEntity: Team

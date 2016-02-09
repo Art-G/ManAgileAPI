@@ -30,18 +30,17 @@ class Board
     /**
      * @var boolean
      */
-    private $favorite = '0';
+    private $favorite;
 
     /**
      * @var boolean
      */
-    private $archived = '0';
+    private $archived;
 
     /**
-     * @var \ApiBundle\Entity\Team
+     * @var Team
      */
     private $team;
-
 
     /**
      * Get id
@@ -152,11 +151,11 @@ class Board
     /**
      * Set team
      *
-     * @param Managile\ApiBundle\Entity\Team $team
+     * @param Team $team
      *
      * @return Board
      */
-    public function setTeam(Managile\ApiBundle\Entity\Team $team = null)
+    public function setTeam(Team $team = null)
     {
         $this->team = $team;
 
