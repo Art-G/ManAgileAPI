@@ -2,6 +2,8 @@
 
 namespace Managile\ApiBundle\Entity;
 
+use Doctrine\ORM\Mapping as ORM;
+
 /**
  * TaskList
  * @ORM\Table()

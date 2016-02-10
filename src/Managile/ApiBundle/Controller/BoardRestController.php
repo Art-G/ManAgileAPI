@@ -37,37 +37,7 @@ class BoardRestController extends FOSRestController
         return $board;
     }
 
-    /*
-     *
-     * @param Request $request
-     * @return \FOS\RestBundle\View\View
-     * @Method({"GET", "POST"})
-     */
-    /*public function postBoardAction(Request $request) {
-        $board = new Board();
-
-        $form = $this->createForm(new BoardFormType(), $board);
-        $form->handleRequest($request);
-
-        if ($form->isValid()) {
-            $board->setOwner($this->getUser());
-
-            $manager = $this->getDoctrine()->getManager();
-
-            $manager->persist($board);
-            $manager->flush();
-
-            return $this->_view(
-                array('board' => $board),
-                Codes::HTTP_CREATED,
-                array(),
-                array('BoardDefault')
-            );
-        }
-
-        return $this->view($form->getErrors(true, false), Codes::HTTP_BAD_REQUEST);
-    }*/
-
+    
     /**
      * @View(serializerGroups={"Default","Details"})
      * @param Request $request

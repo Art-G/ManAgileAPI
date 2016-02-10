@@ -2,6 +2,8 @@
 
 namespace Managile\ApiBundle\Entity;
 
+use Doctrine\ORM\Mapping as ORM;
+
 /**
  * Lask
  * @ORM\Table()
@@ -37,10 +39,10 @@ class Task
     /**
      * @var boolean
      */
-    private $archived = '0';
+    private $archived;
 
     /**
-     * @var \ApiBundle\Entity\TaskList
+     * @var TaskList
      */
     private $list;
 
@@ -178,11 +180,11 @@ class Task
     /**
      * Set list
      *
-     * @param \ApiBundle\Entity\TaskList $list
+     * @param TaskList $list
      *
      * @return Task
      */
-    public function setList(\ApiBundle\Entity\TaskList $list = null)
+    public function setTaskList(TaskList $list = null)
     {
         $this->list = $list;
 
@@ -192,9 +194,9 @@ class Task
     /**
      * Get list
      *
-     * @return \ApiBundle\Entity\TaskList
+     * @return TaskList
      */
-    public function getList()
+    public function getTaskList()
     {
         return $this->list;
     }
