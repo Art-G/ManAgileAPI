@@ -29,10 +29,10 @@ class TaskList
     /**
      * @var boolean
      */
-    private $archived = '0';
+    private $archived;
 
     /**
-     * @var \ApiBundle\Entity\Board
+     * @var Board
      */
     private $board;
 
@@ -122,11 +122,11 @@ class TaskList
     /**
      * Set board
      *
-     * @param \ApiBundle\Entity\Board $board
+     * @param Board $board
      *
      * @return List
      */
-    public function setBoard(\ApiBundle\Entity\Board $board = null)
+    public function setBoard(Board $board = null)
     {
         $this->board = $board;
 

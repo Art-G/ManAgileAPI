@@ -37,7 +37,6 @@ class BoardRestController extends FOSRestController
         return $board;
     }
 
-    
     /**
      * @View(serializerGroups={"Default","Details"})
      * @param Request $request
@@ -72,6 +71,16 @@ class BoardRestController extends FOSRestController
         $manager->flush();
         // created => 201
         return $board;
+    }
+
+    /*
+     * @param Request $request
+     * @param Board $board
+     * @return View
+     */
+    public function putBoardAction(Request $request, Board $board) {
+        $form = $this->createForm(new BoardFormType(), $board, array('method' => 'PUT'));
+        $form->handleRequest($request);
     }
 
     /**
