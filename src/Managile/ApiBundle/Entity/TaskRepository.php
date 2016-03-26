@@ -23,6 +23,7 @@ class TaskRepository extends EntityRepository
 
         $qb->select('a.id, a.name , a.position, a.description, IDENTITY(a.list)')
             ->where('a.list = :list_id')
+			->orderBy('a.position')
             ->setParameter('list_id', $list_id);
 
         return $qb->getQuery()
