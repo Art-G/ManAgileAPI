@@ -2,13 +2,12 @@
 
 namespace Managile\ApiBundle\Entity;
 
-
 use Doctrine\ORM\Mapping as ORM;
 
 /**
  * Member
- * @ORM/Table()
- * #ORM/Entity(repositoryClass="Managile\ApiBundle\Entity\MemberRepository")
+ * @ORM\Table()
+ * @ORM\Entity(repositoryClass="Managile\ApiBundle\Entity\MemberRepository")
  */
 class Member
 {
@@ -23,17 +22,17 @@ class Member
     private $archived = '0';
 
     /**
-     * @var Managile\ApiBundle\Entity\Team
+     * @var Team
      */
     private $team;
 
     /**
-     * @var Managile\ApiBundle\Entity\TeamRole
+     * @var TeamRole
      */
     private $role;
 
     /**
-     * @var Managile\ApiBundle\Entity\FosUser
+     * @var FosUser
      */
     private $user;
 
@@ -75,11 +74,11 @@ class Member
     /**
      * Set team
      *
-     * @param \ApiBundle\Entity\Team $team
+     * @param Team $team
      *
      * @return Member
      */
-    public function setTeam(\ApiBundle\Entity\Team $team = null)
+    public function setTeam(Team $team = null)
     {
         $this->team = $team;
 
@@ -89,7 +88,7 @@ class Member
     /**
      * Get team
      *
-     * @return \ApiBundle\Entity\Team
+     * @return Team
      */
     public function getTeam()
     {
@@ -99,11 +98,11 @@ class Member
     /**
      * Set role
      *
-     * @param \ApiBundle\Entity\TeamRole $role
+     * @param TeamRole $role
      *
      * @return Member
      */
-    public function setRole(\ApiBundle\Entity\TeamRole $role = null)
+    public function setRole(TeamRole $role = null)
     {
         $this->role = $role;
 
@@ -113,7 +112,7 @@ class Member
     /**
      * Get role
      *
-     * @return \ApiBundle\Entity\TeamRole
+     * @return TeamRole
      */
     public function getRole()
     {
@@ -123,11 +122,11 @@ class Member
     /**
      * Set user
      *
-     * @param Managile\ApiBundle\Entity\FosUser $user
+     * @param FosUser $user
      *
      * @return Member
      */
-    public function setUser(Managile\ApiBundle\Entity\FosUser $user = null)
+    public function setUser(FosUser $user = null)
     {
         $this->user = $user;
 
@@ -137,7 +136,7 @@ class Member
     /**
      * Get user
      *
-     * @return Managile\ApiBundle\Entity\FosUser
+     * @return FosUser
      */
     public function getUser()
     {

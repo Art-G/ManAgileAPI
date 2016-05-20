@@ -2,8 +2,12 @@
 
 namespace Managile\ApiBundle\Entity;
 
+use Doctrine\ORM\Mapping as ORM;
+
 /**
  * TeamRole
+ * @ORM\Table()
+ * @ORM\Entity(repositoryClass="Managile\ApiBundle\Entity\TeamRoleRepository")
  */
 class TeamRole
 {

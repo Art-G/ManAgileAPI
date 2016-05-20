@@ -8,6 +8,11 @@ team :
   resource: "ManagileApiBundle:TeamRest"
   name_prefix: api_
 
+teamRole :
+  type: rest
+  resource: "ManagileApiBundle:TeamRoleRest"
+  name_prefix: api_
+
 member :
   type: rest
   resource: "ManagileApiBundle:MemberRest"

@@ -5,7 +5,7 @@ namespace Managile\ApiBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Lask
+ * Task
  * @ORM\Table()
  * @ORM\Entity(repositoryClass="Managile\ApiBundle\Entity\TaskRepository")
  */

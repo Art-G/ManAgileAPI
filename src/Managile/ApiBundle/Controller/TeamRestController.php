@@ -44,13 +44,28 @@ class TeamRestController extends FOSRestController
      * @View(serializerGroups={"Default","Details"})
      * @return object
      */
-    public function getTeamByUserAction($user_id){
+    public function getOneTeamByUserAction($user_id){
         $member = $this->getDoctrine()->getRepository('ManagileApiBundle:Member')->findOneBy(array("user" => $user_id));
         $team = $member->getTeam();
         if(!is_object($team)){
             throw $this->createNotFoundException();
         }
         return $team;
+    }
+
+    /**
+     *
+     * @param $user_id
+     *
+     * @View(serializerGroups={"Default","Details"})
+     * @return object
+     */
+    public function getTeamByUserAction($user_id){
+        $repository = $this->getDoctrine()->getRepository('ManagileApiBundle:Member');
+
+        $members = $repository->showMemberByUser($user_id);
+
+        return $members;
     }
 
     /**
@@ -87,5 +102,22 @@ class TeamRestController extends FOSRestController
         $manager->flush();
         // created => 201
         return $team;
+    }
+
+    /**
+     *
+     * @View(serializerGroups={"Default","Details"})
+     * @param $team_id
+     * @return object
+     */
+    public function deleteTeamAction($team_id){
+        $repository = $this->getDoctrine()->getRepository('ManagileApiBundle:Team');
+
+        $retour = $repository->deleteTeam($team_id);
+
+        if(!($retour)){
+            throw $this->createNotFoundException();
+        }
+        return $retour;
     }
 }

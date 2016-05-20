@@ -24,6 +24,15 @@ class UserRestController extends Controller
     }
 
     /**
+     *
+     * @View(serializerGroups={"Default","Details"})
+     */
+    public function getAllUserAction(){
+        $user = $this->getDoctrine()->getRepository('ManagileApiBundle:FosUser')->findAll();
+        return $user;
+    }
+
+    /**
     *
     * @View(serializerGroups={"Me"})
     */
